@@ -1,166 +1,123 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfolio Ibrahima Diallo</title>
-    <!-- Bulma CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.5/css/bulma.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <style>
-        /* Navbar fixe */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        /* Hero padding pour navbar */
-        .hero {
-            padding-top: 6rem;
-        }
-        /* Projets */
-        .card:hover {
-            transform: translateY(-5px);
-            transition: 0.3s;
-        }
-        /* Formulaire contact */
-        #contactForm {
-            max-width: 600px;
-            margin: auto;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Portfolio Ibrahima Diallo</title>
+<!-- Bootstrap CSS & Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<style>
+/* Navbar fixe et stylée */
+.navbar {
+    background-color: #0b3c5d;
+}
+.navbar .btn-nav {
+    color: #fff;
+    font-weight: bold;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+.navbar .btn-nav:hover {
+    color: #0b3c5d;
+    background-color: #f18f01;
+}
+.hero {
+    padding-top: 5rem; /* espace pour navbar fixe */
+}
+#content {
+    margin-top: 2rem;
+}
+
+/* Mobile styling */
+@media (max-width: 991px) {
+    .navbar .d-flex {
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar .btn-nav {
+        width: 100%;
+        justify-content: center;
+        margin: 3px 0;
+    }
+}
+</style>
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar is-primary" role="navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="#">Ibrahima Diallo</a>
-            <a role="button" class="navbar-burger" data-target="navMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
-        </div>
-        <div id="navMenu" class="navbar-menu">
-            <div class="navbar-end">
-                <a class="navbar-item" href="#about">À propos</a>
-                <a class="navbar-item" href="#projects">Projets</a>
-                <a class="navbar-item" href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- HERO -->
-    <section class="hero is-link is-medium">
-        <div class="hero-body has-text-centered">
-            <p class="title is-1">Ibrahima Diallo</p>
-            <p class="subtitle is-4">Développeur Web & Étudiant en Informatique</p>
-            <img src="assets/img/ibra.jpeg" class="is-rounded" width="160" alt="Photo de profil">
-            <br><br>
-            <a href="#projects" class="button is-primary is-medium">Voir mes projets</a>
-        </div>
-    </section>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <!-- Logo / Home -->
+    <button class="btn btn-dark btn-lg me-3" id="homeBtn"><i class="bi bi-house-door-fill"></i> Ibrahima Diallo</button>
 
-    <!-- À propos -->
-    <section id="about" class="section">
-        <div class="container has-text-centered">
-            <h2 class="title is-2">À propos</h2>
-            <p class="is-size-5">Étudiant en Licence 3 MIAGE à l'Université Paris-Saclay, passionné par le développement web, les bases de données et le Machine Learning. Je développe des projets modernes et performants en utilisant HTML, CSS, Bulma, JavaScript et PHP.</p>
-        </div>
-    </section>
+    <!-- Burger -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!-- Projets -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="title is-2 has-text-centered">Projets</h2>
-            <div class="columns is-multiline">
-                <div class="column is-one-third">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="assets/img/project1.png" alt="Projet 1">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <p class="title is-5">Panier e-commerce</p>
-                            <p>Développement d'un système de gestion de panier avec MySQL et Laravel.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-third">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="assets/img/project2.png" alt="Projet 2">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <p class="title is-5">Site de réservation</p>
-                            <p>Création d'une application de réservation en ligne avec HTML, AJAX et jQuery.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-third">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="assets/img/project3.png" alt="Projet 3">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <p class="title is-5">Gestion de pizzeria</p>
-                            <p>Application pour gérer les commandes et le stock d'une pizzeria, avec PHP et MySQL.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Boutons de navigation -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <div class="d-flex">
+        <button class="btn btn-nav nav-btn" data-page="home"><i class="bi bi-house"></i> Accueil</button>
+        <button class="btn btn-nav nav-btn" data-page="about"><i class="bi bi-person"></i> À propos</button>
+        <button class="btn btn-nav nav-btn" data-page="skills"><i class="bi bi-tools"></i> Compétences</button>
+        <button class="btn btn-nav nav-btn" data-page="projects"><i class="bi bi-kanban"></i> Projets</button>
+        <button class="btn btn-nav nav-btn" data-page="education"><i class="bi bi-book"></i> Éducation</button>
+        <button class="btn btn-nav nav-btn" data-page="contact"><i class="bi bi-envelope"></i> Contact</button>
+      </div>
+    </div>
+  </div>
+</nav>
 
-    <!-- Contact -->
-    <section id="contact" class="section has-background-light">
-        <div class="container">
-            <h2 class="title is-2 has-text-centered">Contact</h2>
-            <form id="contactForm">
-                <div class="field">
-                    <label class="label">Nom</label>
-                    <div class="control">
-                        <input class="input" type="text" name="name" required>
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label">Email</label>
-                    <div class="control">
-                        <input class="input" type="email" name="email" required>
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label">Message</label>
-                    <div class="control">
-                        <textarea class="textarea" name="message" required></textarea>
-                    </div>
-                </div>
-                <button class="button is-link" type="submit">Envoyer</button>
-            </form>
-            <p id="formMessage" class="has-text-success mt-2"></p>
-        </div>
-    </section>
+<!-- Contenu principal AJAX -->
+<div id="content" class="container hero text-center">
+    <h1 class="display-4">Bienvenue sur mon portfolio</h1>
+    <p>Cliquez sur les boutons de navigation pour découvrir mon travail.</p>
+</div>
 
-    <script>
-        // Navbar burger pour mobile
-        $(document).ready(function(){
-            $(".navbar-burger").click(function(){
-                $(".navbar-menu").toggleClass("is-active");
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+    // Gestion des boutons AJAX
+    $(".nav-btn").click(function(){
+        var page = $(this).data("page");
+
+        if(page === "home"){
+            // Recharger le contenu de index.html
+            $("#content").fadeOut(200, function(){
+                $("#content").load("index.html #content > *", function(){
+                    $(this).fadeIn(300);
+                });
             });
+        } else {
+            // Charger pages/*.html
+            $("#content").fadeOut(200, function(){
+                $("#content").load("pages/" + page + ".html", function(){
+                    $(this).fadeIn(300);
+                });
+            });
+        }
+    });
 
-            // Formulaire contact simple AJAX
-            $("#contactForm").submit(function(e){
-                e.preventDefault();
-                $("#formMessage").text("Merci pour votre message !");
-                $(this).trigger("reset");
+    // Bouton home / logo
+    $("#homeBtn").click(function(){
+        $("#content").fadeOut(200, function(){
+            $("#content").load("index.html #content > *", function(){
+                $(this).fadeIn(300);
             });
         });
-    </script>
+    });
+
+});
+</script>
 </body>
 </html>
