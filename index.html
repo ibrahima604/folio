@@ -26,23 +26,75 @@
     color: #0b3c5d;
     background-color: #f18f01;
 }
+
+/* Hero Section */
 .hero {
     padding-top: 5rem; /* espace pour navbar fixe */
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f9;
 }
-#content {
-    margin-top: 2rem;
+.hero img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 5px solid #f18f01;
+    transition: transform 0.3s ease;
+}
+.hero img:hover {
+    transform: scale(1.05);
+}
+.hero-text h1 {
+    font-size: 2.8rem;
+    color: #0b3c5d;
+    font-weight: 700;
+}
+.hero-text p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 1rem 0 2rem;
+}
+.hero-buttons .btn {
+    margin-right: 1rem;
+    padding: 0.8rem 1.8rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.btn-cv {
+    background-color: #f18f01;
+    color: #fff;
+}
+.btn-cv:hover {
+    background-color: #0b3c5d;
+    color: #fff;
+}
+.btn-contact {
+    background-color: #0b3c5d;
+    color: #fff;
+}
+.btn-contact:hover {
+    background-color: #f18f01;
+    color: #fff;
 }
 
-/* Mobile styling */
+/* Responsive */
 @media (max-width: 991px) {
-    .navbar .d-flex {
-        flex-direction: column;
-        width: 100%;
+    .hero img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 1.5rem;
     }
-    .navbar .btn-nav {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .hero-buttons .btn {
         width: 100%;
-        justify-content: center;
-        margin: 3px 0;
+        margin: 0.5rem 0;
     }
 }
 </style>
@@ -52,18 +104,13 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <!-- Logo / Home -->
     <button class="btn btn-dark btn-lg me-3" id="homeBtn"><i class="bi bi-house-door-fill"></i> Ibrahima Diallo</button>
-
-    <!-- Burger -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- Boutons de navigation -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <div class="d-flex">
+      <div class="d-flex flex-wrap justify-content-center">
         <button class="btn btn-nav nav-btn" data-page="home"><i class="bi bi-house"></i> Accueil</button>
         <button class="btn btn-nav nav-btn" data-page="about"><i class="bi bi-person"></i> À propos</button>
         <button class="btn btn-nav nav-btn" data-page="skills"><i class="bi bi-tools"></i> Compétences</button>
@@ -76,9 +123,22 @@
 </nav>
 
 <!-- Contenu principal AJAX -->
-<div id="content" class="container hero text-center">
-    <h1 class="display-4">Bienvenue sur mon portfolio</h1>
-    <p>Cliquez sur les boutons de navigation pour découvrir mon travail.</p>
+<div id="content" class="container hero">
+    <div class="row align-items-center">
+        <!-- Photo -->
+        <div class="col-lg-4 text-center">
+            <img src="assets/img/ibra.jpeg" alt="Ibrahima Diallo">
+        </div>
+        <!-- Texte descriptif + boutons -->
+        <div class="col-lg-8 hero-text">
+            <h1>Développeur Web Full Stack</h1>
+            <p>Étudiant en <strong>Licence 3 MIAGE</strong>, je candidate pour un <strong>Master MIAGE / Data</strong> et recherche une <strong>entreprise en alternance 2026-2027</strong> pour Master 1. J'ai développé plusieurs projets web et possède des compétences pratiques en développement Full Stack. Explorez mon portfolio pour découvrir mes réalisations.</p>
+            <div class="hero-buttons mt-3">
+                <a href="assets/cv_master.pdf" class="btn btn-cv" target="_blank"><i class="bi bi-file-earmark-person"></i> Télécharger CV</a>
+                <button class="btn btn-contact nav-btn" data-page="contact"><i class="bi bi-envelope"></i> Me contacter</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Bootstrap JS Bundle -->
@@ -87,34 +147,38 @@
 <script>
 $(document).ready(function(){
 
-    // Gestion des boutons AJAX
-    $(".nav-btn").click(function(){
-        var page = $(this).data("page");
-
-        if(page === "home"){
-            // Recharger le contenu de index.html
-            $("#content").fadeOut(200, function(){
-                $("#content").load("index.html #content > *", function(){
-                    $(this).fadeIn(300);
-                });
-            });
-        } else {
-            // Charger pages/*.html
-            $("#content").fadeOut(200, function(){
+    function loadPage(page){
+        $("#content").fadeOut(200, function(){
+            if(page === "home"){
+                $("#content").html(`
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-center">
+                        <img src="assets/img/ibra.jpeg" alt="Ibrahima Diallo">
+                    </div>
+                    <div class="col-lg-8 hero-text">
+                        <h1>Développeur Web Full Stack</h1>
+                        <p>Étudiant en <strong>Licence 3 MIAGE</strong>, je candidate pour un <strong>Master MIAGE / Data</strong> et recherche une <strong>entreprise en alternance 2026-2027</strong> pour Master 1. J'ai développé plusieurs projets web et possède des compétences pratiques en développement Full Stack. Explorez mon portfolio pour découvrir mes réalisations.</p>
+                        <div class="hero-buttons mt-3">
+                            <a href="assets/cv_master.pdf" class="btn btn-cv" target="_blank"><i class="bi bi-file-earmark-person"></i> Télécharger CV</a>
+                            <button class="btn btn-contact nav-btn" data-page="contact"><i class="bi bi-envelope"></i> Me contacter</button>
+                        </div>
+                    </div>
+                </div>`).fadeIn(300);
+            } else {
                 $("#content").load("pages/" + page + ".html", function(){
                     $(this).fadeIn(300);
                 });
-            });
-        }
+            }
+        });
+    }
+
+    $(".nav-btn").click(function(){
+        var page = $(this).data("page");
+        loadPage(page);
     });
 
-    // Bouton home / logo
     $("#homeBtn").click(function(){
-        $("#content").fadeOut(200, function(){
-            $("#content").load("index.html #content > *", function(){
-                $(this).fadeIn(300);
-            });
-        });
+        loadPage("home");
     });
 
 });

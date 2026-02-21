@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Éducation - Portfolio Ibrahima Diallo</title>
+<!-- Bootstrap CSS & Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+body {
+    background: #f4f4f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.education-section {
+    padding: 4rem 0;
+}
+.education-section h1 {
+    text-align: center;
+    color: #0b3c5d;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+.card-edu {
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background-color: #fff;
+}
+.card-edu:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+}
+.card-edu .card-body h5 {
+    color: #f18f01;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.card-edu .card-body p {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+.tag-subject {
+    margin: 3px 3px 3px 0;
+    background-color: #0b3c5d;
+    color: #fff;
+    font-size: 0.85rem;
+}
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 4px;
+    background: #0b3c5d;
+    border-radius: 2px;
+}
+.timeline-item {
+    position: relative;
+    margin-left: 70px;
+    margin-bottom: 3rem;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -45px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #f18f01;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+.timeline-item h5 {
+    font-weight: 700;
+    color: #0b3c5d;
+}
+.timeline-item p {
+    color: #555;
+}
+@media (max-width: 768px){
+    .timeline::before {
+        left: 10px;
+    }
+    .timeline-item {
+        margin-left: 50px;
+    }
+    .timeline-item::before {
+        left: -35px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container education-section">
+    <h1>Éducation</h1>
+    
+    <div class="timeline">
+        <!-- Université Paris-Saclay -->
+        <div class="timeline-item">
+            <div class="card card-edu p-4">
+                <div class="card-body">
+                    <h5><i class="bi bi-building"></i> Université Paris-Saclay</h5>
+                    <p><strong>Licence 3 MIAGE</strong> — Systèmes d’Information, Bases de données avancées, Introduction au Machine Learning</p>
+                    <p><i class="bi bi-calendar-event"></i> 2025 - Présent</p>
+                    <p><strong>Matières clés :</strong></p>
+                    <span class="badge tag-subject">Base de données</span>
+                    <span class="badge tag-subject">SQL & NoSQL</span>
+                    <span class="badge tag-subject">Machine Learning</span>
+                    <span class="badge tag-subject">Management des Systèmes d’Information</span>
+                    <span class="badge tag-subject">Genie logiciel avancés </span>
+                    <span class="badge tag-subject">Logique</span>
+                    <span class="badge tag-subject">Algorithmique</span>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Université Cadi Ayyad -->
+        <div class="timeline-item">
+            <div class="card card-edu p-4">
+                <div class="card-body">
+                    <h5><i class="bi bi-building"></i> Université Cadi Ayyad (Marrakech)</h5>
+                    <p><strong>Licence Mathématiques & Informatique</strong> — Mention Assez Bien</p>
+                    <p><i class="bi bi-calendar-event"></i> 2022 - 2025</p>
+                    <p><strong>Matières clés :</strong></p>
+                    <span class="badge tag-subject">Algèbre</span>
+                    <span class="badge tag-subject">Programmation</span>
+                    <span class="badge tag-subject">Intelligence Artificielle</span>
+                    <span class="badge tag-subject">Algorithmique</span>
+                    <span class="badge tag-subject">Systèmes d'exploitation</span>
+                    <span class="badge tag-subject">Réseaux</span>
+                    <span class="badge tag-subject">Système d'Information</span>
+                    <span class="badge tag-subject">Base de données</span>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Mangué Junior -->
+        <div class="timeline-item">
+            <div class="card card-edu p-4">
+                <div class="card-body">
+                    <h5><i class="bi bi-mortarboard-fill"></i> Mangué Junior (Conakry)</h5>
+                    <p><strong>Baccalauréat Sciences Mathématiques</strong> — Mention Bien</p>
+                    <p><strong>Distinction :</strong> Lauréat — Boursier d’excellence (Guinée)</p>
+                    <p><i class="bi bi-calendar-event"></i> 2021 - 2022</p>
+                    <p><strong>Matières clés :</strong></p>
+                    <span class="badge tag-subject">Mathématiques</span>
+                    <span class="badge tag-subject">Physique</span>
+                    <span class="badge tag-subject">Chimie</span>
+                     <span class="badge tag-subject">Anglais</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
