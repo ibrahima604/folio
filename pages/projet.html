@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets - Ibrahima Diallo</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* GLOBAL */
+        body {
+            background: #f8f9fa;
+            font-family: "Segoe UI", sans-serif;
+            line-height: 1.6;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #0B3C5D, #1c5d8b);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* SECTIONS */
+        .section-title {
+            font-weight: 700;
+            color: #0B3C5D;
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        /* CARDS */
+        .project-card {
+            border: none;
+            border-radius: 12px;
+            padding: 25px;
+            background: white;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-icon {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #0B3C5D;
+        }
+
+        .project-card h4 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #0B3C5D;
+        }
+
+        .project-card p {
+            color: #555;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        /* TECH BADGES */
+        .tech-badge {
+            margin: 3px;
+            font-size: 0.8rem;
+            padding: 5px 12px;
+            border-radius: 20px;
+            background-color: #f0f2f5;
+            color: #0B3C5D;
+            border: 1px solid #dee2e6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Mes Projets</h1>
+            <p class="lead">
+                Découvrez une sélection de projets réalisés durant mon parcours en informatique,
+                incluant le développement web, le mobile, l'intelligence artificielle et l'analyse de données.
+            </p>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="container py-5">
+        <h2 class="section-title">Projets Académiques et Professionnels</h2>
+        <div class="row g-4">
+            <!-- PROJET IA -->
+            <div class="col-lg-6">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+                    <h4>Application IA de Tri des Déchets Plastiques</h4>
+                    <p>
+                        Développement d’une application mobile intelligente permettant d’identifier
+                        et de classifier les déchets plastiques à l’aide de la caméra du téléphone.
+                        L’objectif est d’aider les utilisateurs à mieux trier leurs déchets
+                        et à contribuer à la protection de l’environnement grâce à l’intelligence artificielle.
+                    </p>
+                    <div>
+                        <span class="badge tech-badge">Java</span>
+                        <span class="badge tech-badge">Android</span>
+                        <span class="badge tech-badge">Machine Learning</span>
+                        <span class="badge tech-badge">Data Processing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET BIOINFO -->
+            <div class="col-lg-6">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <h4>Analyse Bio-informatique du Réchauffement Climatique</h4>
+                    <p>
+                        Projet d’analyse de données scientifiques portant sur l’impact du
+                        réchauffement climatique sur la biodiversité et la fonte des glaces.
+                        Le travail a consisté à collecter, nettoyer et analyser des données
+                        environnementales afin d’identifier les tendances climatiques
+                        et leurs conséquences sur les écosystèmes.
+                    </p>
+                    <div>
+                        <span class="badge tech-badge">Python</span>
+                        <span class="badge tech-badge">Pandas</span>
+                        <span class="badge tech-badge">NumPy</span>
+                        <span class="badge tech-badge">Data Analysis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET BACKEND -->
+            <div class="col-lg-6">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h4>Développement Backend — Laravel</h4>
+                    <p>
+                        Développement d’un backend robuste utilisant le framework Laravel.
+                        Conception d’API REST sécurisées, gestion de l’authentification des utilisateurs
+                        et optimisation des bases de données relationnelles afin d’assurer
+                        la performance et la sécurité des applications web.
+                    </p>
+                    <div>
+                        <span class="badge tech-badge">Laravel</span>
+                        <span class="badge tech-badge">PHP</span>
+                        <span class="badge tech-badge">MySQL</span>
+                        <span class="badge tech-badge">API REST</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET SOUTENANCE -->
+            <div class="col-lg-6">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <h4>Système de Panier E-commerce (Projet de Soutenance)</h4>
+                    <p>
+                        Projet de fin de licence réalisé au Maroc consistant à concevoir
+                        une plateforme e-commerce complète avec gestion des utilisateurs,
+                        produits, commandes et panier d’achat.
+                        Le projet a été développé en suivant une architecture moderne
+                        avec modélisation UML et MERISE pour la conception du système.
+                    </p>
+                    <div>
+                        <span class="badge tech-badge">React.js</span>
+                        <span class="badge tech-badge">Tailwind CSS</span>
+                        <span class="badge tech-badge">Laravel</span>
+                        <span class="badge tech-badge">PHP</span>
+                        <span class="badge tech-badge">MySQL</span>
+                        <span class="badge tech-badge">MERISE</span>
+                        <span class="badge tech-badge">UML</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
